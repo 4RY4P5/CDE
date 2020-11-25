@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>truYum</h1>
+            <img src="images/truyum-logo-light.png" height="40" width="45">
+            <nav>
+                <a href="menuItem-list-admin.html.html">Menu</a>
+            </nav>
+        </header>
+    <form class="editMenu" onsubmit="editMenuAdmin();return false">
+        <h2 >Edit Menu Item</h2>
+        <br>
+        <label class="label1">Name</label><br>
+        <input type="text" colspan="4" style="width:80%" maxlength="64" minlength="2" required="required" id="title"/>
+        <br><br>
+        <table>
+        <tr>
+        <td><label class="label1">Price (Rs.)</label></td>
+        <td><label class="labels" >Active</label></td>
+        <td><label class="labels" >Date Of Launch</label></td>
+        <td><label class="labels" >Category</label></td>
+        </tr>
+        <tr>
+        <td><input type="number" required="required" id="price" name="price"></td>
+        <td>
+            <input type="radio" class="inputline" id="Yes" name="inStock" value="Yes" required>Yes
+            <input type="radio" id="No" name="inStock" value="No" required>No
+        </td>
+        <td><input type="date" class="inputline" required="required" id="DateOfLaunch" name="Date"></td>
+        <td>
+            <select id="category" class="inputline" required="required" name="Main Course">
+                <option id="Main courses" value="Main Course">Main Course</option>
+                <option id="Starters" value="Starters">Starters</option>
+                <option id="Dessert" value="Dessert">Dessert</option>
+                <option id="Drinks" value="Drinks">Drinks</option>
+            </select>
+        </td>
+        </tr>
+        </table>
+        <br><br>
+        <input type="checkbox" id="check" name="check" value="Yes"/>
+        <label for="check" class="labels">Free Delivery</label>
+        <br><br>
+        <button type=" submit" class="submit" id="submit"  name="submit"  value="Save">Save</button>
+        </form>
+        <br><br>
+        <footer>
+            <p class="foot">Copyright &copy; 2019</p>
+         </footer>
+    </body>
+</html>
