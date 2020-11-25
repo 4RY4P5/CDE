@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="script.js"></script>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>truYum</h1>
+            <img src="images/truyum-logo-light.png" height="43" width="46">
+            <nav>
+                <a href="menuItem-list-customer.html">Menu</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+        </header>
+    <form class="editMenu">
+        <h2>Menu Items</h2>
+        <h3 style="text-align: center;color: green;">Item added to Cart Successfully</h3>
+        <table >
+        <tbody>
+            <tr>
+                <th style="text-align: left;padding-right: 10px;">Name</th>
+                <th style="text-align: center;padding-right: 10px;">Free Delivery</th>
+                <th style="text-align: right;padding-right: 10px;">Price</th>
+                <th style="text-align: center;padding-right: 10px;">Category</th>
+                <th style="text-align: center;padding-right: 10px;">Action</th>
+            </tr>
+            <tr>
+                <td style="padding-right: 15px;">Sandwich</td>
+                <td style="text-align: center;padding-right: 15px;">Yes</td>
+                <td style="padding-right: 15px;">Rs. 99</td>
+                <td style="padding-right: 15px;">Main Course</td>
+                <td style="padding-right: 15px;"><a onclick="addCart(0)" href="menuItem-list-customer-notification.html">Add to Cart</a></td>
+            </tr>
+            <tr>
+                <td style="padding-right: 15px;">Burger</td>
+                <td style="text-align: center;padding-right: 15px;">No</td>
+                <td style="padding-right: 15px;">Rs. 129</td>
+                <td style="padding-right: 15px;">Main Course</td>
+                <td style="padding-right: 15px;"><a onclick="addCart(1)" href="">Add to Cart</a></td>
+            </tr>
+            <tr>
+                <td style="padding-right: 15px;">Pizza</td>
+                <td style="text-align: center;padding-right: 15px;">No</td>
+                <td style="padding-right: 15px;">Rs. 149</td>
+                <td style="padding-right: 15px;">Main Course</td>
+                <td style="padding-right: 15px;"><a onclick="addCart(2)" href="">Add to Cart</a></td>
+            </tr>
+        </tbody>
+        </table>
+    </form>
+        <br>
+        <footer>
+            <p class="foot">Copyright &copy; 2019</p>
+        </footer>
+    </body>
+</html>
