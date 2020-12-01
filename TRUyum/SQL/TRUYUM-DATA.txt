@@ -1,0 +1,120 @@
+/**/
+CREATE DATABASE TRUYUM;
+
+USE TRUYUM;
+
+create table MENU_ITEM
+
+(ITEM_ID int,
+
+NAME VARCHAR(20),
+
+PRICE float,
+
+ACTIVE varchar(5),
+
+DATE_OF_LAUNCH date,
+
+CATEGORY varchar(20),
+
+FREE_DELIVERY varchar(5));
+alter table MENU_ITEM
+ add constraint primary key(ITEM_ID);
+
+
+/*1-A*/
+
+insert into MENU_ITEM values
+ 
+(1,'SANDWICH',99.00,'YES','2017-03-15','MAIN COURSE','YES'),
+
+(2,'BURGER',129.00,'YES','2017-12-23','MAIN COURSE','NO'),
+ 
+(3,'PIZZA',149.00,'YES','2017-08-21','MAIN COURSE','NO'),
+ 
+(4,'FRENCH FRIES',57.00,'NO','2017-07-02','STARTERS','YES'),
+
+(5,'CHOCOLATE BROWNIE',32.00,'YES','2022-11-02','DESSERT','YES');
+/*1-B*/
+
+select ITEM_ID,NAME,CONCAT('Rs.',PRICE) AS PRICE,ACTIVE,
+date_format(DATE_OF_LAUNCH,'%d/%m/%Y') AS DATE_OF_LAUNCH,
+ CATEGORY,
+FREE_DELIVERY FROM MENU_ITEM;
+ 
+/*2-A*/
+ 
+select ITEM_ID,NAME,CONCAT('Rs.',PRICE) AS PRICE,ACTIVE,
+date_format(DATE_OF_LAUNCH,'%d/%m/%Y') AS DATE_OF_LAUNCH,
+ CATEGORY,
+FREE_DELIVERY FROM MENU_ITEM
+ 
+WHERE YEAR(DATE_OF_LAUNCH)<YEAR(current_date()) AND ACTIVE ='YES';
+
+/*3-A*/
+
+ select ITEM_ID,NAME,CONCAT('Rs.',PRICE) AS PRICE,ACTIVE,
+date_format(DATE_OF_LAUNCH,'%d/%m/%Y') AS DATE_OF_LAUNCH,
+
+CATEGORY,FREE_DELIVERY FROM MENU_ITEM WHERE ITEM_ID=4;
+ 
+/*3-B*/
+
+update MENU_ITEM SET PRICE=50 WHERE ITEM_ID=4;
+ 
+/*4-A*/
+ create table USER 
+ 
+( USER_ID INT primary key,
+
+USER_NAME varchar(10));
+
+
+
+insert into USER values
+
+(101,'SAM'),
+(102,'TOM');
+
+create table CART
+ 
+( USER_ID int,
+ 
+ ITEM_ID int,
+  
+foreign key(USER_ID) references USER(USER_ID),
+  
+foreign key(ITEM_ID) references MENU_ITEM(ITEM_ID));
+  
+
+
+insert into CART values
+ 
+(101,1),
+  (101,3),
+  (101,5);
+  
+
+  /*5-A*/
+ 
+select M.ITEM_ID,NAME,CONCAT('Rs.',PRICE) AS PRICE,ACTIVE,
+date_format(DATE_OF_LAUNCH,'%d/%m/%Y') AS DATE_OF_LAUNCH,
+
+CATEGORY,FREE_DELIVERY  FROM MENU_ITEM M inner join CART C
+ON M.ITEM_ID=C.ITEM_ID 
+ WHERE C.USER_ID=101;
+
+
+  /*5-B*/
+ 
+SELECT SUM(PRICE) AS TOTAL_PRICE
+ FROM MENU_ITEM M inner join CART C ON M.ITEM_ID=C.ITEM_ID 
+ 
+WHERE C.USER_ID=101;
+  
+
+ /*6-A*/
+ 
+delete from CART WHERE ITEM_ID=3 AND USER_ID=101;
+ 
+select * FROM CART;
