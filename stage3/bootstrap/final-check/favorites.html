@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>favorites</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--customized css-->
+    
+
+        <link rel="stylesheet" href="moviecruiser.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--for adding home icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+  <style>
+   .movie{
+    max-width: 18rem;
+    padding-left: 0em;
+    padding-right: 0em;
+    
+}
+    h1{
+      text-align: left;
+      color: #ebe5de;
+    }
+  </style>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #523207e7;">
+        <div class="container-fluid navConatiner">
+            <a class="navbar-brand text-white" href="#">
+                <i class="material-icons icon-size " >local_movies</i>
+                MOVIE CRUISER
+              </a>
+            <button type="button" class="navbar-toggler  btn btn-light" data-toggle="collapse" data-target="#myNavbars"
+            aria-controls="myNavbars" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse"  id="myNavbars">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="home.html" >
+                         Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="favorites.html" >
+                       Favorites
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="available.html" >
+                     Available
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
+     </nav>
+
+     <div class="container-fluid wrapper flex-grow-1" id="favbg">
+      <span> <h1>Favorites</h1>
+        <h3 class="text-white" id="count">( 2 )</h3>
+      </span>
+        <div class="card-row">
+            <div class="card-deck">
+                 <!--card 2-->
+            <div class="card col-lg-3 col-sm-12 mt-1 mb-1 movie" id="moviecard1">
+                <img src="https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/large/dhuruvangal-pathinaaru-et00051351-24-03-2017-15-43-18.jpg"
+                     class="card-img-top" alt="d16" id="pic1">
+                     <div class="card-body">
+                      <h5 class="card-title text-white text-align-center">Dhuruvangal-16
+                        <span class="float-right">
+                          <small class="text-muted ">
+                           29/12/2016
+                            </small>
+                          </span>
+                       </h5>
+                      <div>
+                        <p class="text-white">Crime Thriller <span class="badge badge-success float-right " > Active </span> </p>
+                          <small class="text-white">Box Office :  ₹2.04 crore<span class="float-right">Tamil</span></small>
+                      </div>
+                      <a href="https://youtu.be/xpt2jfiL5GY" class="text-white">Teaser<small>( click here ) </small></a>
+                    </div>
+                    <button onclick="document.getElementById('moviecard1').style.display='none';document.getElementById('count').innerHTML='( 1 )';isEmpty();" class="deleteBtn float-right">
+                        <i class="material-icons text-muted" id="delete">delete_forever</i></button>
+                       
+              </div>
+            <!--card 3-->
+            <div class="card col-lg-3 col-sm-12 mt-1 mb-1 movie" id="moviecard2">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a5/Hera_Pheri_2000_poster.jpg/220px-Hera_Pheri_2000_poster.jpg"
+                     class="card-img-top" alt="HeraPheri" id="pic1">
+                     <div class="card-body">
+                      <h5 class="card-title text-white text-align-center">Hera-Pheri
+                        <span class="float-right">
+                          <small class="text-muted ">
+                           21/03/2000
+                            </small>
+                          </span>
+                       </h5>
+                      <div>
+                        <p class="text-white">Comedy <span class="badge badge-danger float-right " > Inactive </span> </p>
+                          <small class="text-white">Box Office :  ₹24.3 crore<span class="float-right">Hindi</span></small>
+                      </div>
+                      <a href="#" class="text-white"><del>Teaser</del></a>
+                   </div>
+                   <button onclick="document.getElementById('moviecard2').style.display='none';document.getElementById('count').innerHTML='( 1 )';isEmpty();" class="deleteBtn float-right">
+                    <i class="material-icons text-muted" id="delete">delete_forever</i></button>
+                    
+                    </div>
+          </div>
+        </div>
+        <br/>
+
+    </div>
+    
+     
+
+
+
+ <!-- Copyright -->
+ <footer class="text-white text-lg-start container-fluid fixed-bottom">Copyright 2019</footer>
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+  <script>
+    function isEmpty()
+    {
+        if(document.getElementById('moviecard1').style.display=='none' && document.getElementById('moviecard2').style.display=='none')
+        document.location.href = "favorites-empty.html";
+    
+        return false;
+    }
+      </script>
+</html>

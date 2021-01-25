@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>edit-movie</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--customized css-->
+    
+
+        <link rel="stylesheet" href="moviecruiser.css">
+
+   <!-- Bootstrap CSS -->
+   <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+</head>
+  <style>
+   
+    h1{
+      color: #5a4e3e;
+    }
+    body{
+        background-image: url("https://images.unsplash.com/photo-1606942666813-963a0f912b31?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8dGV4dHVyZSUyMHllbGxvd3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+        background-repeat:repeat;
+    object-fit: cover;
+    height:100%;
+    width:100%;
+    overflow-x: hidden;
+    }
+    label{
+        font-weight: bold;
+    }
+  </style>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#523207e7;">
+        <div class="container-fluid navConatiner">
+            <a class="navbar-brand text-white" href="#">
+                <i class="material-icons icon-size " >local_movies</i>
+                MOVIE CRUISER
+              </a>
+            <button type="button" class="navbar-toggler  btn btn-light" data-toggle="collapse" data-target="#myNavbars"
+            aria-controls="myNavbars" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse"  id="myNavbars">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="admin-home.html">
+                         Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="favorites.html">
+                       Favorites
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="available.html" >
+                     Available
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
+     </nav>
+   
+<div class="container-fluid wrapper flex-grow-1">
+    <h1 class="">Edit Movie Details</h1><br/>
+    <form name="edit-movie-form" onsubmit="return formValidation();" action="edit-movie-success.html">
+        <!--row 1-->
+        <div class="form-row">
+           <div class=" form-group col-12">
+               <label for="movieName">Movie Title</label>
+               <input class="form-control" id="movieName" type="text">
+               <label class="text-danger" id="movieName-error"></label>
+           </div> 
+        </div>
+        <!--row 2-->
+        <div class="form-row">
+            <div class="form-group col-lg-3 col-md-12 col-sm-12">
+                <label for="language" >Language</label>
+                <input class="form-control" id="language" type="text">
+                <label class="text-danger" id="language-error"></label>
+            </div>
+
+            <div class="form-group col-lg-3 col-md-12 col-sm-12">
+                <label for="boxOffice" >Box Office</label>
+                <input class="form-control" id="boxOffice" type="text">
+                <label class="text-danger" id="boxOffice-error"></label>
+            </div>
+
+            <div class="form-group col-lg-3 col-md-12 col-sm-12">
+                <label for="launchDate" class="form-label">Date of Launch</label>
+                <input type="text" class="form-control" id="launchDate" placeholder="dd/mm/yyyy">
+                <label class="text-danger" id="date-error"></label>
+            </div>
+            
+            <div class="form-group col-lg-3 col-md-12 col-sm-12">
+                <label for="genre" >Genre</label>
+                <select class="form-control" id="genre">
+                    <option></option>
+                    <option>Romantic Drama</option>
+                    <option>Action Drama</option>
+                    <option>Comedy</option>
+                    <option>Science Fiction</option>
+                    <option>Thriller</option>
+                    <option>Super Hero</option>
+                    <option>Other</option>
+                </select>
+                <label class="text-danger" id="genre-error"></label>
+            </div>
+
+          </div>
+       
+        <!--row 3-->
+        <div class="form-row">
+            <div class="form-group col-sm-6 col-md-3 col-lg-3">
+                <label for="active" class="form-label">Active</label>
+                <br />
+             <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="active_yes" name="active" value="yes">
+                    <label class="form-check-label" for="active_yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                   <input class="form-check-input" type="radio" id="active_no" name="active" value="no">
+                   <label class="form-check-label" for="active_no">No</label>
+                   
+                  
+                </div>
+                <label class="d-block text-danger" id="active-error"></label>
+            </div>
+
+            <div class="form-group col-sm-6 col-md-3 col-lg-3">
+                <label for="teaser">Teaser</label><br />        
+               <div class="form-check form-check-inline">
+                   <input class="form-check-input" type="checkbox" id="teaser"  >
+                  </div>
+               </div>
+        </div>
+        <!--row 4-->
+        <div class="form-row">
+            <div class="form-group col-lg-2 col-sm-6">
+                <input type="submit" class="btn btn-primary" value="Save" id="save"/>
+            </div>
+        </div>
+
+    </form>
+</div>
+    
+<!-- Copyright -->
+<footer class="text-white text-lg-start container-fluid fixed-bottom">Copyright 2019</footer>
+<!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+
+<script>
+
+$('#launchDate').datepicker({
+
+uiLibrary: 'bootstrap4',
+
+format: 'dd/mm/yyyy'
+
+});
+
+</script>
+<script>
+    function formValidation(){
+        var movieName = document.getElementById("movieName");
+        var language=document.getElementById("language");
+        var boxOffice = document.getElementById("boxOffice");
+        var launchDate = document.getElementById("launchDate");
+        var genre = document.getElementById("genre");
+        var active = document.getElementsByName("active");
+        var valid = true;
+        if(movieName== null|| movieName.value==""){
+            document.getElementById("movieName-error").innerHTML="Movie title is required. ";
+            valid=false;
+        }
+        if (movieName.value.length > 200)
+         {
+          document.getElementById("movieName-error").innerHTML ="Movie title cannot exceed 200 characters.";
+          valid = false;
+        }
+        if(language== null|| language.value==""){
+            document.getElementById("language-error").innerHTML="Language is required. ";
+            valid=false;
+        }
+        if(boxOffice==null ||boxOffice.value=='0' || boxOffice.value=="")
+        {
+            document.getElementById("boxOffice-error").innerHTML =
+            "Box-Office value is required.";
+            valid = false;
+        }
+        
+        
+        if(launchDate==null || launchDate.value==""||!/^([0-9]{2})[\/]([0-9]{2})\/([0-9]{4})$/.test(launchDate.value))
+        {
+            document.getElementById("date-error").innerHTML ="Incorrect date format.";
+            valid = false;
+        }
+        if (genre == null || genre.value == "") {
+          document.getElementById("genre-error").innerHTML =
+            "Select atleast one Genre.";
+          valid = false;
+        }
+        if (!active[0].checked && !active[1].checked) {
+          document.getElementById("active-error").innerHTML =
+            "Select the Movie status.";
+          valid = false;
+        }
+        return valid;
+      
+    }
+</script>
+</html>
