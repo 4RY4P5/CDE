@@ -4,11 +4,11 @@ use truyum;
 
 create table MenuItems (
 item_id int auto_increment primary key,
-item_name varchar(30) not null,
+item_name varchar(25) not null,
 price float(2) not null,
 item_active boolean not null,
 date_of_launch date not null,
-category varchar(30) not null,
+category varchar(25) not null,
 free_delivery boolean not null
 );
 
