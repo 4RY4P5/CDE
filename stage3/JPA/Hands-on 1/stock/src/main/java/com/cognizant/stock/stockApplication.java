@@ -1,4 +1,4 @@
-package com.cognizant.ormlearn;
+package com.cognizant.stock;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.cognizant.ormlearn.model.Stock;
-import com.cognizant.ormlearn.repository.StockRepository;
+import com.cognizant.stock.model.Stock;
+import com.cognizant.stock.repository.StockRepository;
 
 
 
