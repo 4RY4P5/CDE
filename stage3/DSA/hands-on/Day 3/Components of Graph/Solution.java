@@ -41,15 +41,13 @@ class Result {
     }
     ArrayList<Integer> count=new ArrayList<Integer>();
     
-   /* HashSet< ArrayList<Integer>> values=new HashSet< ArrayList<Integer>>();
-    values.addAll(nodes.values());
-    */
+  
     for(int i:points)
     {
         ArrayList<Integer> list=nodes.get(i);
         if(list.size()>1)
             count.add(list.size());
-        //list.clear();
+       
     }
     
     System.out.println(Collections.min(count)+" "+Collections.max(count));
