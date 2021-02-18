@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -22,6 +23,8 @@ import com.cognizant.springlearn.model.Country;
 public class CountryController {
 
 	ApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
+	
+
 @GetMapping("/hello")
 	public String sayHello() {
 		
@@ -46,12 +49,12 @@ public List<Country> getAllCountries() {
 	return countrylist;
 }
 @GetMapping("/country/{id}")
-public Country getCountrybyId(@PathVariable String id) {
+public Country getCountrybyId(@PathVariable String id)throws CountryNotFoundException {
 
-	List<Country> countrylist = new ArrayList<>();
-	countrylist=(List<Country>)context.getBean("countryList", ArrayList.class);
+	
+	ArrayList<Country> countrylist=context.getBean("countryList", ArrayList.class);
 	Country country=new Country();
-	Iterator itr = countrylist.iterator();
+	Iterator<Country> itr = countrylist.iterator();
 	while(itr.hasNext()) {
 		
 		 country = (Country)itr.next();
@@ -74,13 +77,13 @@ public Country getCountrybyId(@PathVariable String id) {
 
 }
 @ExceptionHandler(CountryNotFoundException.class)
-@ResponseStatus(HttpStatus.NOT_FOUND) 
+@ResponseStatus(code=HttpStatus.NOT_FOUND, reason="Country Not Found") 
 public Error employeeNotFound(CountryNotFoundException e) {
 	
 	String id = e.getId();
 	
 	
-	return new Error(id,"Country not found!!");
+	return new Error(id,"Country Not Found");
 	
 	
 }
